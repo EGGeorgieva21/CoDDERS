@@ -34,9 +34,9 @@ This console application .
 ## Our Team
 - <a href="https://github.com/EGGeorgieva21"> Emma Georgieva (Scrum Trainer)</a> <br>
    
-- <a href="https://github.com/SDTodorov21"> Sergey Toptunov (Backend developer) </a> <br>
+- <a href="https://github.com/SAToptunov21"> Sergey Toptunov (Backend developer) </a> <br>
    
-- <a href="https://github.com/ATSivkov21"> Valentin Pendashev (Designer) </a> <br>
+- <a href="https://github.com/vbpendashev21"> Valentin Pendashev (Designer) </a> <br>
   
 - <a href="https://github.com/KNKostadinov21"> Kristiyan Kostadinov (Backend developer) </a> <br>
   
