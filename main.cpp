@@ -22,6 +22,10 @@ struct Person
 // 5. Congrats you've been scammed :)
 
 // how do wills work
+// There are two types of wills - 1. Bulgarian Handwritten Will (this is the one we'll be making) 2. Notarial Will
+// - the text of the will must be kept secret, and also, there must be a date. Only the latest will is valid.
+// requirements of the Bulgarian Legislation? - must be signed with full name and signature
+// small end text - we recommend registering this will at the Notary office.
 int main()
 {
 
