@@ -1,15 +1,6 @@
 #include <iostream>
-#include 'functions.cpp'
+#include "functions.h"
 using namespace std;
-
-
-struct Person
-{
-    string Name;
-    int age;
-    int socialSecurityNumber;
-    int personalNumber;
-};
 
 // block // + // block //
 
@@ -26,8 +17,17 @@ struct Person
 // - the text of the will must be kept secret, and also, there must be a date. Only the latest will is valid.
 // requirements of the Bulgarian Legislation? - must be signed with full name and signature
 // small end text - we recommend registering this will at the Notary office.
+
+// change logo to codders
+
+
 int main()
 {
-
+    int a;
+    cin >> a;
+    cout << a;
+    registering();
+    checkRequires();
+    login();
 
 }
