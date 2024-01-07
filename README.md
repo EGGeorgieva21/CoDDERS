@@ -7,7 +7,7 @@
 <br>
 
 ## Topic
-This console application .
+This console application is used to make a personal will based on the Bulgarian Legislation Laws.
 
 
 ## How to run the console application
@@ -29,14 +29,18 @@ This console application .
 
 ## Features
 ✅ Simplistic looking interface. <br>
+✅ 2) <br>
+✅ 3) <br>
 
 
 ## Our Team
 - <a href="https://github.com/EGGeorgieva21"> Emma Georgieva (Scrum Trainer)</a> <br>
+
+- <a href="https://github.com/KNKostadinov21"> Kristiyan Kostadinov (Backend developer) </a> <br>
    
-- <a href="https://github.com/SAToptunov21"> Sergey Toptunov (Backend developer) </a> <br>
+- <a href="https://github.com/SAToptunov"> Sergey Toptunov (Backend developer) </a> <br>
    
 - <a href="https://github.com/vbpendashev21"> Valentin Pendashev (Designer) </a> <br>
   
-- <a href="https://github.com/KNKostadinov21"> Kristiyan Kostadinov (Backend developer) </a> <br>
+
   
