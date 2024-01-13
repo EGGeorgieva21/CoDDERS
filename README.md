@@ -1,7 +1,8 @@
 <h1 align="center" >CoDDERS</h1>
 <br>
 <p align="center">
-<img src="Documentation/logo.png" alt="logo" height="500" width="500""> 
+<img src="Documentation/logo.png" alt="logo" height="250" width="250"">
+    <img src="Documentation/project%20activity%20logo.png" alt="project%20activity%20logo" height="250" width="250"">
 </p>
 
 <br>
@@ -25,10 +26,6 @@ This console application is used to make a personal will based on the Bulgarian 
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MicroTeams.png/640px-MicroTeams.png" width="15" height="15"> Microsoft Teams <br>
 - <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="15" height="15"> GitHub <br>
 
-## Features
-✅ Simplistic looking interface. <br>
-✅ 2) <br>
-✅ 3) <br>
 
 
 ## Our Team
