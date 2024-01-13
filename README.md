@@ -1,7 +1,8 @@
 <h1 align="center" >CoDDERS</h1>
 <br>
 <p align="center">
-<img src="Documentation/logo.png" alt="logo" height="500" width="500""> 
+<img src="Documentation/logo.png" alt="logo" height="500" width="500"">
+    <img src="Documentation/project%20activity%20logo.png" alt="project%20activity%20logo" height="500" width="500"">
 </p>
 
 <br>
