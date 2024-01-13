@@ -14,19 +14,26 @@ struct Person
     string name;
     string surname;
     string date;
-
-    string beneficiaries[100];
     string executor;
     string uniqueSignature;
-}
+};
 
-struct NODE 
+struct NODE
 {
     string item;
     string recipent;
     NODE* next;
-}
-void prependNode(NODE *&head, string item, string recipent)
+};
+
+
+Register registerData;
+Register loginData;
+Person user;
+string beneficiaries[100];
+int numberBeneficiaries;
+struct NODE* head = NULL;
+
+void prependNode(NODE*& head, string item, string recipent)
 {
     NODE* newNode = new NODE;
     newNode->next = head;
@@ -34,20 +41,17 @@ void prependNode(NODE *&head, string item, string recipent)
     newNode->recipent = recipent;
     head = newNode;
 }
-void printList(NODE *head)
+
+void printList(NODE* head)
 {
     NODE* temp = head;
-    while(temp != NULL)
+    while (temp != NULL)
     {
-        cout << "I bequest " << temp->item << " to beneficiary " << temp->recipient << endl;
+        cout << "I bequest " << temp->item << " to beneficiary " << temp->recipent << endl;
         temp = temp->next;
     }
 }
 
-Register registerData;
-Register loginData;
-Person user;
-int numberBeneficiaries;
 
 bool containsDigit(string str)
 {
@@ -59,7 +63,7 @@ bool containsDigit(string str)
         }
     }
     return false;
-} 
+}
 
 void registering()
 {
@@ -67,7 +71,7 @@ void registering()
 
     cout << "Register yourself." << endl;
     cout << endl;
-  
+
     cout << "Your username must contain \"codingburgas.bg\".Enter your username: ";
     getline(cin, registerData.username);
     cout << endl;
@@ -79,11 +83,12 @@ void registering()
 
 void checkRequires()
 {
+    cout << "\033[2J\033[H"; // ANSI escape codes to clear the console
     while (true)
     {
         if (registerData.username.find("@codingburgas.bg") != string::npos && containsDigit(registerData.password))
         {
-            cout << "Registered successful";
+            cout << "Registered successful" << endl;
             cout << "Now, log in.";
             cout << endl;
             break;
@@ -120,10 +125,7 @@ void login()
             if (loginData.password == registerData.password)
             {
                 cout << "Welcome " << loginData.username << "! You can continue working." << endl;
-
-                //Makes a NODE list for the user.
-                NODE* head = new NODE;
-
+                cout << endl;
                 break;
             }
         }
@@ -134,7 +136,7 @@ void login()
     }
 }
 
-void getInfo() 
+void getInfo()
 {
     cout << "The first part of making a CV is writing your personal information. Please answer the questions below." << endl;
 
@@ -147,96 +149,92 @@ void getInfo()
     cout << endl;
 
     cout << "Enter the current date: ";
-    cin >> user.data;
+    cin >> user.date;
     cout << endl;
 
-    cout << "Enter the number of beneficiaries: "
+    cout << "Enter the number of beneficiaries: ";
     cin >> numberBeneficiaries;
-	cout << "\nEnter beneficiary: ";
+
+    cout << "\nEnter beneficiary: ";
     for (int i = 0; i < numberBeneficiaries; i++)
-    {	
-        cin >> user.beneficiaries[i];
+    {
+        cin >> beneficiaries[i];
     }
     cout << endl;
 
-    cout << "Enter the executor of your will. ";
+    cout << "Enter the executor of your will: ";
     cin >> user.executor;
     cout << endl;
 
-    cout << "Lastly, enter your signature. This will be used to sign your will. ";
+    cout << "Lastly, enter your signature. This will be used to sign your will: ";
     cin >> user.uniqueSignature;
     cout << endl;
 }
 
-void createWill() 
+void createWill()
 {
     string item;
     cout << "Please enter your asset/s or item/s: ";
-    getline(cin, item);
+    cin >> item;
+    cout << endl;
 
     string recipient;
-    cout << "The intended recipent: ";
-    getline(cin, recipient);
-
-    cout << "I bequeath " << item << " to " << recipient << ". Is this correct? y/n\n";
-
-    string answer;
-    getline(cin, answer);
-    if(string == "yes" || string == "y" || string == "Yes")
+    while (true)
     {
-        prependNode(head, item, recipent);
-		cout << "\nAsset has been added. Continue adding assets? y/n";
-        cin >> answer;
-		if (string == "yes" || string == "y" || string == "Yes")
+        cout << "The intended recipient: ";
+        cin >> recipient;
+
+        // Check if the recipient is in the array beneficiaries
+        auto it = find(begin(beneficiaries), end(beneficiaries), recipient);
+
+        if (it != end(beneficiaries))
         {
-            cout << endl;
-            createWill();
+            break; // Exit the loop if recipient is found in the array beneficiaries
         }
-    }else{
-        cout << "\nAsset has not been added. Continue adding assets? y/n";
-		if (string == "yes" || string == "y" || string == "Yes")
-		{
-			cout << endl;
-			createWill();
-		}
+        else
+        {
+            cout << "Recipient not found in the listed beneficiaries. Try again." << endl;
+        }
     }
-    
-  
+    cout << endl;
+    prependNode(head, item, recipient);
+    cout << "I bequeath " << item << " to " << recipient << "." << endl;
+}
+
+
 void printWill()
 {
-    // the below code may or may not work
     cout << "\033[2J\033[H"; // ANSI escape codes to clear the console
 
     cout << "Your will is complete. Here it is: " << endl;
-    
+
 
     cout << "      Name: " << user.name << endl;
 
     cout << "      Surname: " << user.surname << endl;
 
-    cout << "      Date:" << user.date << endl;
+    cout << "      Date: " << user.date << endl;
 
     cout << "      Beneficiaries: ";
     for (int i = 0; i < numberBeneficiaries; i++)
     {
-        cout << user.beneficiaries[i] << " ";
+        cout << beneficiaries[i] << " ";
     }
     cout << endl;
     cout << "      Executor: " << user.executor << endl;
 
 
-    cout << "This is my last will and testament. " << endl
+    cout << "This is my last will and testament. " << endl;
     printList(head);
 
-    cout << "Signed, " << user.uniqueSignature;
+    cout << "Signed, " << user.uniqueSignature << endl;
 
 
 }
 
 void logout()
 {
-    cout << "Press any key to logout...\n";
-    _getch();  // Press _getch() to logout
-
-    cout << "Logout successful.\n";
+    cout << "Press any key to exit..." << endl;
+    _getch(); // Waits for a key press
+    exit(0); // Exits the program
 }
