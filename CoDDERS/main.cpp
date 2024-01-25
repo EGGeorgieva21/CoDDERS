@@ -5,9 +5,9 @@ using namespace std;
 
 int main()
 {
-    /*registering();
+    registering();
     checkRequires();
-    login();*/
+    login();
     getInfo();
     createWill();
     printWill();

@@ -5,7 +5,7 @@ import csv
 filename = str(input("What'cha lookin for? \n"))
 
 # string arr[100] = 
-with open('../ggr/userData/' + filename + '.csv', newline='') as csvfile:
+with open('CoDDERS/userData/' + filename + '.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
     print("Found it! Here's the will: ")
 
